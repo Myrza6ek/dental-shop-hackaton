@@ -3,6 +3,9 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import UpgradeIcon from "@mui/icons-material/Upgrade";
+import ReduceCapacityIcon from "@mui/icons-material/ReduceCapacity";
 
 import "./HomePage.css";
 
@@ -16,8 +19,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function HomePage() {
   return (
-    <Box>
+    <Box className="body">
       <Grid
+        className="bg1"
         mx="auto"
         container
         sx={{
@@ -25,9 +29,9 @@ function HomePage() {
           flexDirection: "column",
           justifyContent: "space-around",
 
-          height: "80vh",
+          height: "85vh",
           width: "60vw",
-          bgcolor: "rgb(3, 117, 117)",
+          // bgcolor: "rgb(3, 117, 117)",
         }}>
         <Grid
           sx={{
@@ -36,7 +40,7 @@ function HomePage() {
             justifyContent: "space-evenly",
             mt: "20px",
           }}>
-          <Grid item xs={4} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -58,7 +62,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -86,7 +90,7 @@ function HomePage() {
             flexDirection: "row",
             justifyContent: "space-evenly",
           }}>
-          <Grid item xs={4} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -107,7 +111,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -135,7 +139,7 @@ function HomePage() {
             flexDirection: "row",
             justifyContent: "space-evenly",
           }}>
-          <Grid item xs={3} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -156,7 +160,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5}>
+          <Grid item xs={4} sm={5} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -186,7 +190,7 @@ function HomePage() {
           sx={{
             mx: "auto",
             width: "50vw",
-            height: "60vh",
+            height: "46vh",
           }}>
           <br />
           <h3>О магазине</h3>
@@ -207,7 +211,41 @@ function HomePage() {
             сэкономить еще больше.
           </p>
         </Grid>
-        <Grid></Grid>
+        <Grid
+          sx={{
+            mx: "auto",
+            width: "50vw",
+            height: "30vh",
+          }}>
+          <Grid className="function1">
+            <Grid>
+              <AccessTimeIcon color="action" sx={{ fontSize: 40 }} />
+
+              <h4>Нас знают с 1998 года</h4>
+              <span>
+                поэтому большинство клиентов приезжают из других городов.
+              </span>
+            </Grid>
+            <Grid>
+              <UpgradeIcon color="action" sx={{ fontSize: 40 }} />
+
+              <h4>Более 1000 товаров</h4>
+              <span>
+                При заказе на сумму более 1500 сом доставка осуществляется по
+                всему Бишкеку бесплатно
+              </span>
+            </Grid>
+            <Grid>
+              <ReduceCapacityIcon color="action" sx={{ fontSize: 40 }} />
+
+              <h4>Более 100 клиник с нами</h4>
+              <span>
+                Наш опыт и возможности позволяют оснастить ваш кабинет с нуля,
+                за несколько часов
+              </span>
+            </Grid>
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

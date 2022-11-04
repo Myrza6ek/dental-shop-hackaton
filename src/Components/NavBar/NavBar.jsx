@@ -133,9 +133,9 @@ function NavBar() {
               justifyContent: "space-around",
             }}>
             <span>Главная</span>
-            <span>Для админа</span>
             <span>Все товары</span>
             <span>О нас</span>
+            <span>Для админа</span>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
