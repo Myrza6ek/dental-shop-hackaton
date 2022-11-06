@@ -9,8 +9,8 @@ const App = () => {
     <>
       <Box mt="120px">
         <NavBar />
-        <AddProduct />
-        <br />
+        {/* <AddProduct /> */}
+        {/* <br /> */}
         <HomePage />
       </Box>
     </>

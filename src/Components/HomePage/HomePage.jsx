@@ -8,6 +8,7 @@ import UpgradeIcon from "@mui/icons-material/Upgrade";
 import ReduceCapacityIcon from "@mui/icons-material/ReduceCapacity";
 
 import "./HomePage.css";
+import { Typography } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -19,28 +20,34 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function HomePage() {
   return (
-    <Box className="body">
+    <Box className="body" mx="auto">
       <Grid
         className="bg1"
         mx="auto"
         container
+        width="80%"
+        position="relative"
+        height="500px"
         sx={{
           display: "flex",
+          flexWrap: "wrap",
           flexDirection: "column",
+          // alignItems: "space-between",
           justifyContent: "space-around",
 
-          height: "85vh",
-          width: "60vw",
+          // height: "85vh",
+          //
           // bgcolor: "rgb(3, 117, 117)",
         }}>
         <Grid
+          className="grid_2"
           sx={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-evenly",
             mt: "20px",
           }}>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -48,13 +55,15 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Ортодонтия</h4>
-                <p>количество товаров</p>
-              </div>
+              <Grid>
+                <Typography>Ортодонтия</Typography>
+                количество товаров
+              </Grid>
 
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://ortholight.ru/upload/iblock/39e/39ec44e9fb7307df908c748e0031903d.jpg"
@@ -62,7 +71,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -70,12 +79,14 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Терапия</h4>
+              <Grid>
+                <Typography>Терапия</Typography>
                 количество товаров
-              </div>
+              </Grid>
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://rocadamed.ru/upload/iblock/491/4913f6f023c9ea5dcf0b4f1e3fa53a34.jpg"
@@ -85,12 +96,13 @@ function HomePage() {
           </Grid>
         </Grid>
         <Grid
+          className="grid_2"
           sx={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-evenly",
           }}>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -98,12 +110,14 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Ортопедия</h4>
+              <Grid>
+                <Typography>Ортопедия</Typography>
                 количество товаров
-              </div>
+              </Grid>
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://el-dent.ru/UserFiles/Image/catalog-img/silikon-dvuhfaznye.jpg"
@@ -111,7 +125,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -119,12 +133,14 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Хирургия</h4>
+              <Grid>
+                <Typography>Хирургия</Typography>
                 количество товаров
-              </div>
+              </Grid>
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://dental-shop.kg/uploads/products/WhatsApp_Image_2020-11-17_at_12.32.16.jpg"
@@ -134,12 +150,13 @@ function HomePage() {
           </Grid>
         </Grid>
         <Grid
+          className="grid_2"
           sx={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-evenly",
           }}>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -147,12 +164,14 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Вспомогательные материалы</h4>
+              <Grid>
+                <Typography>Вспомогательные материалы</Typography>
                 количество товаров
-              </div>
+              </Grid>
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://dentalmagazine.ru//wp-content/uploads/2014/08/2_2_opt.jpg"
@@ -160,7 +179,7 @@ function HomePage() {
               />
             </Item>
           </Grid>
-          <Grid item xs={4} sm={5} className="text1">
+          <Grid item sm={4} className="text1">
             <Item
               sx={{
                 display: "flex",
@@ -168,12 +187,14 @@ function HomePage() {
                 justifyContent: "space-around",
                 bgcolor: "#55c2ce",
                 color: "white",
+                width: "100%",
               }}>
-              <div>
-                <h4>Оборудывания</h4>
+              <Grid>
+                <Typography>Оборудывания</Typography>
                 количество товаров
-              </div>
+              </Grid>
               <img
+                className="img"
                 width="100vw"
                 height="100vh"
                 src="https://medmetr.ru/upload/uf/319/319844a099b281171a92dcac101aa33a.jpg"
@@ -184,18 +205,19 @@ function HomePage() {
         </Grid>
       </Grid>
 
-      <Box className="bg" mt="50px" sx={{ mx: "auto", width: "61%" }}>
+      <Box className="bg box1" mt="50px" sx={{ mx: "auto", width: "80%" }}>
         <Grid
-          mt="60px"
+          className="about"
+          // mt="90px"
           sx={{
             mx: "auto",
             width: "50vw",
-            height: "46vh",
+            // height: "50vh",
           }}>
           <br />
-          <h3>О магазине</h3>
-          <h2>Магазин Dental Shop</h2>
-          <p>
+          <Typography variant="h4">О магазине</Typography>
+          <Typography variant="h5">Магазин Dental Shop</Typography>
+          <Typography>
             Наша цель – придерживаясь бережного и ответственного отношения к
             покупателям делать приобретение стоматологических материалов,
             средств, принадлежностей, инструментов и оборудования выгодным,
@@ -209,36 +231,38 @@ function HomePage() {
             оборудования для зуботехнической лаборатории. Наши цены более чем
             компромиссные, а бонусные программы и специальные акции позволяют
             сэкономить еще больше.
-          </p>
+          </Typography>
         </Grid>
+      </Box>
+      <Box className="bg" mt="50px" sx={{ mx: "auto", width: "80%" }}>
         <Grid
           sx={{
             mx: "auto",
-            width: "50vw",
-            height: "30vh",
+            width: "80%",
+            // height: "initial",
           }}>
-          <Grid className="function1">
-            <Grid>
+          <Grid className="grid_about" sx={{ display: "flex" }}>
+            <Grid className="function_1__grid">
               <AccessTimeIcon color="action" sx={{ fontSize: 40 }} />
 
-              <h4>Нас знают с 1998 года</h4>
+              <Typography variant="h6">Нас знают с 1998 года</Typography>
               <span>
                 поэтому большинство клиентов приезжают из других городов.
               </span>
             </Grid>
-            <Grid>
+            <Grid className="function_1__grid">
               <UpgradeIcon color="action" sx={{ fontSize: 40 }} />
 
-              <h4>Более 1000 товаров</h4>
+              <Typography variant="h6">Более 1000 товаров</Typography>
               <span>
                 При заказе на сумму более 1500 сом доставка осуществляется по
                 всему Бишкеку бесплатно
               </span>
             </Grid>
-            <Grid>
+            <Grid className="function_1__grid">
               <ReduceCapacityIcon color="action" sx={{ fontSize: 40 }} />
 
-              <h4>Более 100 клиник с нами</h4>
+              <Typography variant="h6">Более 100 клиник с нами</Typography>
               <span>
                 Наш опыт и возможности позволяют оснастить ваш кабинет с нуля,
                 за несколько часов
