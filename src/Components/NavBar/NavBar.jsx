@@ -12,6 +12,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React from "react";
+import { Link } from "@mui/material";
 
 function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -111,19 +112,30 @@ function NavBar() {
             sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <img
-            src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
-            alt="logo"
-            style={{ width: "2vw" }}
-          />
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}>
+            <img
+              src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
+              alt="logo"
+              style={{ width: "2vw" }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                display: { xs: "none", sm: "block" },
+                color: "#55c2ce",
+                backgroundColor: "white",
+              }}>
+              ental Shop
+            </Typography>
+          </IconButton>
 
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" }, color: "#55c2ce" }}>
-            ental Shop
-          </Typography>
           <LiveSearch />
 
           <Box
@@ -132,10 +144,38 @@ function NavBar() {
               width: "50%",
               justifyContent: "space-around",
             }}>
-            <span>Главная</span>
-            <span>Все товары</span>
-            <span>О нас</span>
-            <span>Для админа</span>
+            <Link
+              sx={{
+                color: "white",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Главная
+            </Link>
+            <Link
+              sx={{
+                color: "white",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Каталог
+            </Link>
+            <Link
+              sx={{
+                color: "white",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              О нас
+            </Link>
+            <Link
+              sx={{
+                color: "white",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Для админа
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />

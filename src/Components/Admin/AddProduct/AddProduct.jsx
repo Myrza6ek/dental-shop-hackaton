@@ -1,4 +1,4 @@
-import { Button, Paper, TextField } from "@mui/material";
+import { Box, Button, Grid, Paper, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { productContext } from "../../../context/ProductContextProvider";
 import "./AddProduct.css";
@@ -56,65 +56,100 @@ const AddProduct = () => {
   // }
   return (
     <>
-      <h2 id="add-title">Добавление товара</h2>
-      <Paper
-        sx={{ padding: "30px", mx: "auto", width: "60%", bgcolor: "#818987ca" }}
-        elevation={9}>
-        <form id="form-add">
-          <TextField
-            className="outlined-basic"
-            label="Категория"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Название"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Модель"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Описание"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Цвет"
-            variant="outlined"
-          />
-          <TextField
-            type="number"
-            className="outlined-basic"
-            label="Цена"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Фото 1"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Фото 2"
-            variant="outlined"
-          />
-          <TextField
-            className="outlined-basic"
-            label="Фото 3"
-            variant="outlined"
-          />
-          <Button
-            sx={{ my: "30px", mx: "auto", width: "40%" }}
-            variant="contained"
-            type="submit">
-            Добавить
-          </Button>
-        </form>
-      </Paper>
+      <Box>
+        <Paper
+          sx={{
+            padding: "20px",
+            mx: "auto",
+            width: "70%",
+            bgcolor: "#818987ca",
+          }}
+          elevation={9}>
+          <h2 id="add-title">Добавление товара</h2>
+          <Grid id="form-add">
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Категория"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Название"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Подкатегория"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Описание"
+              variant="outlined"
+            />
+
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              type="number"
+              label="Цена"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Фото 1"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Фото 2"
+              variant="outlined"
+            />
+            <TextField
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                margin: "10px 0",
+              }}
+              label="Фото 3"
+              variant="outlined"
+            />
+            <Button
+              sx={{ my: "30px", mx: "auto", width: "40%" }}
+              variant="contained"
+              type="submit">
+              Добавить
+            </Button>
+          </Grid>
+        </Paper>
+      </Box>
     </>
   );
 };
