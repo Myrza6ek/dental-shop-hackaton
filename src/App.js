@@ -1,11 +1,22 @@
 import React from "react";
-import Footer from "./Components/Footer/Footer";
 
-function App() {
+import HomePage from "./Components/HomePage/HomePage";
+import NavBar from "./Components/NavBar/NavBar";
+import Box from "@mui/material/Box";
+import AddProduct from "./Components/Admin/AddProduct/AddProduct";
+
+const App = () => {
   return (
-    <div className="container">
-      <Footer />
-    </div>
+    <>
+      <Box mt="120px">
+        <NavBar />
+        {/* <AddProduct /> */}
+        {/* <br /> */}
+        <HomePage />
+      </Box>
+    </>
   );
-}
+};
+
+
 export default App;
