@@ -1,3 +1,81 @@
 {
-  "dentalProducts": []
+  "dentalProducts": [
+    {
+      "category": "123123",
+      "title": "3123123",
+      "subCategory": "123123",
+      "description": "1",
+      "price": 3210,
+      "img1": "https://dental-shop.kg/uploads/products/54244-475x475_T6V4iFY.jpg",
+      "img2": "wrwerwer",
+      "img3": "rwerwer",
+      "id": 1
+    },
+    {
+      "category": "terapy",
+      "title": "nakonexnik",
+      "subCategory": "ter",
+      "description": "asdfsfs",
+      "price": 15000,
+      "img1": "https://dental-shop.kg/uploads/products/2022-02-08_11-12-07.png",
+      "img2": "2",
+      "img3": "3",
+      "id": 2
+    },
+    {
+      "category": "ter",
+      "title": "plombirovochnye",
+      "subCategory": "terapia",
+      "description": "rwqerqwr",
+      "price": 19995,
+      "img1": "https://dental-shop.kg/uploads/products/Restavrin_Kit_8.jpg",
+      "img2": "2",
+      "img3": "3",
+      "id": 3
+    },
+    {
+      "category": "123123",
+      "title": "3123123",
+      "subCategory": "123123",
+      "description": "1",
+      "price": 3210,
+      "img1": "https://dental-shop.kg/uploads/products/54244-475x475_T6V4iFY.jpg",
+      "img2": "wrwerwer",
+      "img3": "rwerwer",
+      "id": 4
+    },
+    {
+      "category": "terapy",
+      "title": "nakonexnik",
+      "subCategory": "ter",
+      "description": "asdfsfs",
+      "price": 15000,
+      "img1": "https://dental-shop.kg/uploads/products/2022-02-08_11-12-07.png",
+      "img2": "2",
+      "img3": "3",
+      "id": 5
+    },
+    {
+      "category": "hir",
+      "title": "shipcy",
+      "subCategory": "hirurgia",
+      "description": "rwqerqwr",
+      "price": 19995,
+      "img1": "https://dental-shop.kg/uploads/products/WhatsApp_Image_2020-11-17_at_12.32.16.jpg",
+      "img2": "2",
+      "img3": "3",
+      "id": 6
+    },
+    {
+      "category": "hirurg",
+      "title": "elevatory",
+      "subCategory": "udalenie",
+      "description": "lkfasndflkansdflkasn",
+      "price": 8000,
+      "img1": "https://dental-shop.kg/uploads/products/Przechwytywanie-4.jpg",
+      "img2": "2",
+      "img3": "3",
+      "id": 7
+    }
+  ]
 }

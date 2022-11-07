@@ -4,29 +4,30 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="footerbg">
-      <div className="footer_one">
-        {/* <img width="50px" src="" alt="Второе logo" /> */}
-        <img alt="Второе logo" />
-        <h2>@2022 DENTAL-SHOP</h2>
-        <br />
+      <div className="f1">
+        <div className="footer_one">
+          <img alt="Второе logo" />
+          <h2>@2022 DENTAL-SHOP</h2>
+        </div>
+        <div className="footer_text">
+          <ul>
+            <li>Политика конфедициальности</li>
+            <li>Пользователькое соглашение</li>
+            <li>Все права защищены.</li>
+          </ul>
+          <ul>
+            <li>О магазине</li>
+            <li>Каталог</li>
+            <li>Доставка и оплата</li>
+          </ul>
+          <ul>
+            <li>Бонусная система</li>
+            <li>Вопрос и ответы</li>
+            <li>Контакты</li>
+          </ul>
+        </div>
       </div>
-      <div className="footer_text">
-        <ul>
-          <li>Политика конфедициальности</li>
-          <li>Пользователькое соглашение</li>
-          <li>Все права защищены.</li>
-        </ul>
-        <ul>
-          <li>О магазине</li>
-          <li>Каталог</li>
-          <li>Доставка и оплата</li>
-        </ul>
-        <ul>
-          <li>Бонусная система</li>
-          <li>Вопрос и ответы</li>
-          <li>Контакты</li>
-        </ul>
-      </div>
+      {/* icons start */}
       <div className="wrapper">
         <div className="icon facebook">
           <div className="fooltip">Facebook</div>
@@ -52,6 +53,7 @@ function Footer() {
             <i className="fab fa-telegram"></i>
           </span>
         </div>
+        {/* icons end */}
       </div>
     </div>
   );
