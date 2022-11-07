@@ -1,7 +1,60 @@
 import React from "react";
+import "./Footer.css";
 
-const Footer = () => {
-  return <div>footer</div>;
-};
+function Footer() {
+  return (
+    <div className="footerbg">
+      <div className="footer_one">
+        {/* <img width="50px" src="" alt="Второе logo" /> */}
+        <img alt="Второе logo" />
+        <h2>@2022 DENTAL-SHOP</h2>
+        <br />
+      </div>
+      <div className="footer_text">
+        <ul>
+          <li>Политика конфедициальности</li>
+          <li>Пользователькое соглашение</li>
+          <li>Все права защищены.</li>
+        </ul>
+        <ul>
+          <li>О магазине</li>
+          <li>Каталог</li>
+          <li>Доставка и оплата</li>
+        </ul>
+        <ul>
+          <li>Бонусная система</li>
+          <li>Вопрос и ответы</li>
+          <li>Контакты</li>
+        </ul>
+      </div>
+      <div className="wrapper">
+        <div className="icon facebook">
+          <div className="fooltip">Facebook</div>
+          <span>
+            <i className="fab fa-facebook-f"></i>
+          </span>
+        </div>
+        <div className="icon whatsapp">
+          <div className="fooltip">Whatsapp</div>
+          <span>
+            <i className="fab fa-whatsapp"></i>
+          </span>
+        </div>
+        <div className="icon instagram">
+          <div className="fooltip">Instagram</div>
+          <span>
+            <i className="fab fa-instagram"></i>
+          </span>
+        </div>
+        <div className="icon telegram">
+          <div className="fooltip">Telegram</div>
+          <span>
+            <i className="fab fa-telegram"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Footer;
