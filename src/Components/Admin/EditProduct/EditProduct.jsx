@@ -12,7 +12,9 @@ const EditProduct = () => {
   const { id } = useParams();
   useEffect(() => {
     readOneProduct(id);
-  }, [id]);
+  }, []);
+
+  console.log(productDetails);
 
   function handleChange(e) {
     let obj = {
@@ -56,9 +58,10 @@ const EditProduct = () => {
           width: "70%",
           bgcolor: "#818987ca",
         }}
-        elevation={9}>
+        elevation={9}
+      >
         <Typography id="add-title">Редактирование</Typography>
-        <form id="form-add" onSubmit={e => handleSave(e)}>
+        <form id="form-add" onSubmit={(e) => handleSave(e)}>
           <TextField
             sx={{
               backgroundColor: "white",
@@ -67,8 +70,8 @@ const EditProduct = () => {
             }}
             label="Категория"
             variant="outlined"
-            value={inpValues.category}
-            onChange={e => handleChange(e)}
+            value={productDetails?.category}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -78,8 +81,8 @@ const EditProduct = () => {
             }}
             label="Название"
             variant="outlined"
-            value={inpValues.title}
-            onChange={e => handleChange(e)}
+            value={productDetails?.title}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -89,8 +92,8 @@ const EditProduct = () => {
             }}
             label="Подкатегория"
             variant="outlined"
-            value={inpValues.subCategory}
-            onChange={e => handleChange(e)}
+            value={productDetails?.subCategory}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -100,8 +103,8 @@ const EditProduct = () => {
             }}
             label="Описание"
             variant="outlined"
-            value={inpValues.description}
-            onChange={e => handleChange(e)}
+            value={productDetails?.description}
+            onChange={(e) => handleChange(e)}
           />
 
           <TextField
@@ -113,8 +116,8 @@ const EditProduct = () => {
             type="number"
             label="Цена"
             variant="outlined"
-            value={inpValues.price}
-            onChange={e => handleChange(e)}
+            value={productDetails?.price}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -124,8 +127,8 @@ const EditProduct = () => {
             }}
             label="Фото 1"
             variant="outlined"
-            value={inpValues.img1}
-            onChange={e => handleChange(e)}
+            value={productDetails?.img1}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -135,8 +138,8 @@ const EditProduct = () => {
             }}
             label="Фото 2"
             variant="outlined"
-            value={inpValues.img2}
-            onChange={e => handleChange(e)}
+            value={productDetails?.img2}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -146,13 +149,14 @@ const EditProduct = () => {
             }}
             label="Фото 3"
             variant="outlined"
-            value={inpValues.img3}
-            onChange={e => handleChange(e)}
+            value={productDetails?.img3}
+            onChange={(e) => handleChange(e)}
           />
           <Button
             sx={{ my: "30px", mx: "auto", width: "40%" }}
             variant="contained"
-            type="submit">
+            type="submit"
+          >
             Сохранить
           </Button>
         </form>
