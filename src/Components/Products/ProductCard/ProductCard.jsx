@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,8 +7,20 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { IconButton } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useContext } from "react";
+import { productContext } from "../../../context/ProductContextProvider";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ProductCard = ({ obj }) => {
+  const { readOneProduct, productDetails, deleteProduct } =
+    useContext(productContext);
+  console.log(obj);
+
+  useEffect(() => {
+    readOneProduct(obj.id);
+  }, []);
+
+  const navigate = useNavigate();
   return (
     <>
       <Card sx={{ maxWidth: 355, mx: "auto" }}>
@@ -50,13 +62,22 @@ const ProductCard = ({ obj }) => {
             >
               <AddShoppingCartIcon />
             </Button>
-            <Button size="small">Подробнее</Button>
+
+            <Link to={`/details/${obj.id}`}>
+              <Button size="small">Подробнее</Button>
+            </Link>
           </CardActions>
           <CardActions>
-            <Button variant="outlined" color="warning">
+            <Button
+              variant="outlined"
+              color="warning"
+              onClick={() => navigate(`/edit/${obj.id}`)}>
               Edit
             </Button>
-            <Button variant="outlined" color="error">
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={() => deleteProduct(obj.id)}>
               delete
             </Button>
           </CardActions>

@@ -4,7 +4,9 @@
   display: flex;
   /* flex-direction: column; */
   width: auto;
-  justify-content: space-between;
+  /* align-items: center; */
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
   margin-top: 20px 0;
   padding: 40px 0;
 }
@@ -130,4 +132,15 @@
 .wrapper .telegram:hover .fooltip,
 .wrapper .telegram:hover .fooltip ::before {
   background: #25a5dc;
+}
+
+@media all and (max-width: 460px) {
+  .footer_one,
+  .footer_text,
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper .icon {
+    height: 120px;
+  }
 }

@@ -1,17 +1,6 @@
 {
   "dentalProducts": [
     {
-      "category": "123123",
-      "title": "3123123",
-      "subCategory": "123123",
-      "description": "1",
-      "price": 3210,
-      "img1": "https://dental-shop.kg/uploads/products/54244-475x475_T6V4iFY.jpg",
-      "img2": "wrwerwer",
-      "img3": "rwerwer",
-      "id": 1
-    },
-    {
       "category": "terapy",
       "title": "nakonexnik",
       "subCategory": "ter",
