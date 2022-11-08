@@ -1,18 +1,18 @@
 .footerbg {
-  height: 200px;
-  background-color: rgba(128, 128, 128, 0.89);
+
+  padding: 30px 0;
   display: flex;
-  /* flex-direction: column; */
-  width: auto;
-  /* align-items: center; */
   justify-content: space-around;
-  /* flex-wrap: wrap; */
-  margin-top: 20px 0;
-  padding: 40px 0;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(128, 128, 128, 0.184);
+  height: 200px;
+
 }
 .f1 {
   display: flex;
   margin: auto;
+
 }
 .footer_one {
   /* margin-top: 15px; */
@@ -33,10 +33,10 @@
 .footer_text ul li {
   margin-top: 10px;
   font-family: system-ui;
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 .footer_one h2 {
-  font-size: 15px;
+  font-size: 25px;
   letter-spacing: 1px;
   font-family: sans-serif;
   color: rgb(242, 189, 17);
@@ -51,6 +51,8 @@
   display: flex;
   justify-content: end;
   margin-right: 10px;
+  min-height: 120px;
+  margin-top: 15px;
 }
 .wrapper .icon {
   margin: 0 20px;
