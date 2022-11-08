@@ -1,36 +1,25 @@
 {
   "dentalProducts": [
     {
-      "category": "tewe",
+      "category": "terapiaaaaaaaaaaaaaaa",
       "title": "plombiwe",
-      "subCategory": "terae",
+      "subCategory": "terapia",
       "description": "rwqerqewewewe",
-      "price": "800660",
+      "price": "12000",
       "img1": "https://dental-shop.kg/uploads/products/Restavrin_Kit_8.jpg",
-      "img2": "2",
-      "img3": "3",
+      "img2": "https://dental-shop.kg/uploads/products/Restavrin_Kit_8.jpg",
+      "img3": "https://dental-shop.kg/uploads/products/Restavrin_Kit_8.jpg",
       "id": 3
     },
     {
-      "category": "123123",
-      "title": "3123123",
-      "subCategory": "123123",
-      "description": "1",
-      "price": 3210,
-      "img1": "https://dental-shop.kg/uploads/products/54244-475x475_T6V4iFY.jpg",
-      "img2": "wrwerwer",
-      "img3": "rwerwer",
-      "id": 4
-    },
-    {
-      "category": "terapy",
-      "title": "nakonexnik",
-      "subCategory": "ter",
-      "description": "asdfsfs",
-      "price": 15000,
+      "category": "otopedia",
+      "title": "Nakonechnik",
+      "subCategory": "instrumenty",
+      "description": "Частота вращения ротора — 340 000 оборотов в минуту. Мощность — не менее 18 Вт. Длина инструмента: 12-14 см. Двухструйный спрей.",
+      "price": "19000",
       "img1": "https://dental-shop.kg/uploads/products/2022-02-08_11-12-07.png",
-      "img2": "2",
-      "img3": "3",
+      "img2": "https://dental-shop.kg/uploads/products/2022-02-08_11-12-07.png",
+      "img3": "https://dental-shop.kg/uploads/products/2022-02-08_11-12-07.png",
       "id": 5
     },
     {
@@ -49,11 +38,66 @@
       "title": "elevatory",
       "subCategory": "udalenie",
       "description": "lkfasndflkansdflkasn",
-      "price": 8000,
+      "price": "99999555",
       "img1": "https://dental-shop.kg/uploads/products/Przechwytywanie-4.jpg",
       "img2": "2",
       "img3": "3",
       "id": 7
+    },
+    {
+      "category": "gttt",
+      "title": "ghjkl",
+      "subCategory": "ghjkl",
+      "description": "hjkl",
+      "price": 9876543,
+      "img1": "bhjkl",
+      "img2": "nmk.",
+      "img3": "1 00 0 000 ",
+      "id": 8
+    },
+    {
+      "category": "Terapia",
+      "title": "Kaferdam",
+      "subCategory": "izolyacionnye",
+      "description": "a;sldkfh;sdlkfha;sdlkgha;slkghasdlg",
+      "price": 6000,
+      "img1": "https://dental-shop.kg/uploads/products/%D0%BC%D0%B0%D0%BA%D1%81%D0%B4%D0%B0%D0%BC.jpg",
+      "img2": "https://dental-shop.kg/uploads/products/%D0%BC%D0%B0%D0%BA%D1%81%D0%B4%D0%B0%D0%BC.jpg",
+      "img3": "https://dental-shop.kg/uploads/products/%D0%BC%D0%B0%D0%BA%D1%81%D0%B4%D0%B0%D0%BC.jpg",
+      "id": 9
+    },
+    {
+      "category": "hirurgia",
+      "title": "PGA",
+      "subCategory": "Шовные материалы",
+      "description": "фыватыфдвардыврадлыврадфырадлырвад",
+      "price": 200,
+      "img1": "https://dental-shop.kg/uploads/products/%D0%BF%D0%B3%D0%B0_owEwwWa.jpg",
+      "img2": "https://dental-shop.kg/uploads/products/%D0%BF%D0%B3%D0%B0_owEwwWa.jpg",
+      "img3": "https://dental-shop.kg/uploads/products/%D0%BF%D0%B3%D0%B0_owEwwWa.jpg",
+      "id": 10
+    },
+    {
+      "category": "hirurgia",
+      "title": "Shpric karpulnyi",
+      "subCategory": "instrumenty ",
+      "description": "s;lhw;elkq;elhrqwerhlqkwjergwegroqiwer",
+      "price": "1507",
+      "img1": "https://dental-shop.kg/uploads/products/SY-ME1-side-2000x2000.png",
+      "img2": "https://dental-shop.kg/uploads/products/SY-ME1-side-2000x2000.png",
+      "img3": "https://dental-shop.kg/uploads/products/SY-ME1-side-2000x2000.png",
+      "id": 11
+    },
+    {
+      "category": "ortopedia",
+      "title": "Silaxil",
+      "subCategory": "slepochnye",
+      "description": "qwetqqwtqrtqetqwtwetqwtwetqwetqwte",
+      "price": 2600,
+      "img1": "https://dental-shop.kg/uploads/products/silaxil-500x500.jpg",
+      "img2": "https://dental-shop.kg/uploads/products/silaxil-500x500.jpg",
+      "img3": "https://dental-shop.kg/uploads/products/silaxil-500x500.jpg",
+      "id": 12
     }
   ]
 }

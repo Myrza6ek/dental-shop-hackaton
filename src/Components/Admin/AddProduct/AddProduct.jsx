@@ -11,7 +11,7 @@ const AddProduct = () => {
   const [subCategory, setSubCategory] = useState("");
   const [description, setDescription] = useState("");
 
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
@@ -49,14 +49,14 @@ const AddProduct = () => {
     setSubCategory("");
     setDescription("");
 
-    setPrice(0);
+    setPrice();
     setImg1("");
     setImg2("");
     setImg3("");
   }
   return (
     <>
-      <Box>
+      <Box mb="40px">
         <Paper
           sx={{
             padding: "20px",
@@ -65,8 +65,8 @@ const AddProduct = () => {
             bgcolor: "#818987ca",
           }}
           elevation={9}>
-          <h2 id="add-title">Добавление товара</h2>
           <form id="form-add" onSubmit={e => handleAdd(e)}>
+            <h2 id="add-title">Добавление товара</h2>
             <TextField
               sx={{
                 backgroundColor: "white",

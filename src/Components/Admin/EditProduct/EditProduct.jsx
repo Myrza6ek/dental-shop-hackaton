@@ -45,7 +45,8 @@ const EditProduct = () => {
       return;
     }
     editProduct(id, inpValues);
-    navigate("/list");
+    navigate(`/details/${id}`);
+    readOneProduct();
   }
 
   return (
@@ -57,6 +58,7 @@ const EditProduct = () => {
           justifyContent: "center",
           padding: "20px",
           mx: "auto",
+          mb: "40px",
           width: "70%",
           bgcolor: "#818987ca",
         }}
@@ -122,7 +124,7 @@ const EditProduct = () => {
             label="Цена"
             name="price"
             variant="outlined"
-            value={inpValues.price}
+            value={inpValues?.price}
             onChange={e => handleChange(e)}
           />
           <TextField

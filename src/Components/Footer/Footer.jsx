@@ -6,8 +6,11 @@ function Footer() {
     <div className="footerbg">
       <div className="f1">
         <div className="footer_one">
-          <img alt="Второе logo" />
-          <h2>@2022 DENTAL-SHOP</h2>
+          <img
+            src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
+            alt="Второе logo"
+          />
+          <h2>©2022 DENTAL-SHOP</h2>
         </div>
         <div className="footer_text">
           <ul>
