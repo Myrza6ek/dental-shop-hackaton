@@ -4,6 +4,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar/NavBar";
 import Box from "@mui/material/Box";
 import AddProduct from "./Components/Admin/AddProduct/AddProduct";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -13,10 +14,10 @@ const App = () => {
         {/* <AddProduct /> */}
         {/* <br /> */}
         <HomePage />
+        <Footer />
       </Box>
     </>
   );
 };
-
 
 export default App;

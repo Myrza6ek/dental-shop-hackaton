@@ -1,8 +1,10 @@
 .footerbg {
-  height: 150px;
-  background-color: rgba(128, 128, 128, 0.184);
+  padding: 30px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(128, 128, 128, 0.184);
 }
 
 .footer_one {
@@ -22,10 +24,10 @@
 .footer_text ul li {
   margin-top: 10px;
   font-family: system-ui;
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 .footer_one h2 {
-  font-size: 15px;
+  font-size: 25px;
   letter-spacing: 1px;
   font-family: sans-serif;
   color: rgb(242, 189, 17);
@@ -40,6 +42,8 @@
   display: flex;
   justify-content: end;
   margin-right: 10px;
+  min-height: 120px;
+  margin-top: 15px;
 }
 .wrapper .icon {
   margin: 0 20px;
@@ -121,4 +125,15 @@
 .wrapper .telegram:hover .fooltip,
 .wrapper .telegram:hover .fooltip ::before {
   background: #25a5dc;
+}
+
+@media all and (max-width: 460px) {
+  .footer_one,
+  .footer_text,
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper .icon {
+    height: 120px;
+  }
 }

@@ -27,6 +27,7 @@ function Footer() {
           <li>Контакты</li>
         </ul>
       </div>
+      {/* icons start */}
       <div className="wrapper">
         <div className="icon facebook">
           <div className="fooltip">Facebook</div>
@@ -52,6 +53,7 @@ function Footer() {
             <i className="fab fa-telegram"></i>
           </span>
         </div>
+        {/* icons end */}
       </div>
     </div>
   );
