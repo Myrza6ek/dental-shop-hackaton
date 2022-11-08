@@ -10,17 +10,19 @@ import ProductCard from "./Components/Products/ProductCard/ProductCard";
 import Footer from "./Components/Footer/Footer";
 import "./index.css";
 import ProductContextProvider from "./context/ProductContextProvider";
+import MainRoutes from "./MainRoutes";
 
 const App = () => {
   return (
     <ProductContextProvider>
       <Box mt="110px">
         <NavBar />
+        <MainRoutes />
         {/* <EditProduct /> */}
-        <AddProduct />
+        {/* <AddProduct /> */}
         {/* <br /> */}
         {/* <HomePage /> */}
-        <ProductList />
+        {/* <ProductList /> */}
         {/* <ProductCard /> */}
         <Footer />
       </Box>

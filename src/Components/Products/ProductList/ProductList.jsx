@@ -1,4 +1,4 @@
-import { Box, Grid, Pagination, Typography } from "@mui/material";
+import { Box, Grid, Pagination } from "@mui/material";
 import React, { useEffect } from "react";
 import { useContext } from "react";
 import { productContext } from "../../../context/ProductContextProvider";
@@ -13,7 +13,7 @@ const ProductList = () => {
   }, []);
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box mt="80px" sx={{ display: "flex", justifyContent: "center" }}>
         <Grid
           sx={{ width: "auto", bgcolor: "white", borderRadius: "5px" }}
           my="20px">

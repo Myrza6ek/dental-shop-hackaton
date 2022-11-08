@@ -1,59 +1,49 @@
-import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
-import React, { useContext, useState } from "react";
+import { Button, Paper, TextField, Typography } from "@mui/material";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { productContext } from "../../../context/ProductContextProvider";
 import "./EditProduct.css";
 
 const EditProduct = () => {
-  // const { addProduct } = useContext(productContext);
-  // const [category, setCategory] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [model, setModel] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [color, setColor] = useState("");
-  // const [price, setPrice] = useState(0);
-  // const [img1, setImg1] = useState("");
-  // const [img2, setImg2] = useState("");
-  // const [img3, setImg3] = useState("");
+  const { productDetails, readOneProduct, editProduct } =
+    useContext(productContext);
+  const [inpValues, setInpValues] = useState(productDetails);
 
-  // function handleAdd(e) {
-  //   e.preventDefault(); // останавливает автообновление бразуреа при отправке данных через form
-  //   if (
-  //     !category.trim() ||
-  //     !title.trim() ||
-  //     !model.trim() ||
-  //     !description.trim() ||
-  //     !color.trim() ||
-  //     !price.trim() ||
-  //     !img1.trim() ||
-  //     !img2.trim() ||
-  //     !img3.trim()
-  //   ) {
-  //     alert("Заполните все поля!");
-  //     return;
-  //   }
+  const { id } = useParams();
+  useEffect(() => {
+    readOneProduct(id);
+  }, [id]);
 
-  //   let obj = {
-  //     category,
-  //     title,
-  //     model,
-  //     description,
-  //     color,
-  //     price: +price,
-  //     img1,
-  //     img2,
-  //     img3,
-  //   };
-  //   addProduct(obj);
-  //   setCategory("");
-  //   setTitle("");
-  //   setModel("");
-  //   setDescription("");
-  //   setColor("");
-  //   setPrice(0);
-  //   setImg1("");
-  //   setImg2("");
-  //   setImg3("");
-  // }
+  function handleChange(e) {
+    let obj = {
+      ...inpValues,
+      [e.target.name]: e.target.value,
+    };
+    setInpValues(obj);
+  }
+
+  const navigate = useNavigate();
+
+  function handleSave(e) {
+    e.preventDefault(); // останавливает автообновление бразуреа при отправке данных через form
+    if (
+      !inpValues.category.trim() ||
+      !inpValues.title.trim() ||
+      !inpValues.model.trim() ||
+      !inpValues.description.trim() ||
+      !inpValues.color.trim() ||
+      !inpValues.price ||
+      !inpValues.img1.trim() ||
+      !inpValues.img2.trim() ||
+      !inpValues.img3.trim()
+    ) {
+      alert("Заполните все поля!");
+      return;
+    }
+    editProduct(id, inpValues);
+    navigate("/list");
+  }
+
   return (
     <>
       <Paper
@@ -68,7 +58,7 @@ const EditProduct = () => {
         }}
         elevation={9}>
         <Typography id="add-title">Редактирование</Typography>
-        <Grid id="form-add">
+        <form id="form-add" onSubmit={e => handleSave(e)}>
           <TextField
             sx={{
               backgroundColor: "white",
@@ -77,6 +67,8 @@ const EditProduct = () => {
             }}
             label="Категория"
             variant="outlined"
+            value={inpValues.category}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -86,6 +78,8 @@ const EditProduct = () => {
             }}
             label="Название"
             variant="outlined"
+            value={inpValues.title}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -95,6 +89,8 @@ const EditProduct = () => {
             }}
             label="Подкатегория"
             variant="outlined"
+            value={inpValues.subCategory}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -104,6 +100,8 @@ const EditProduct = () => {
             }}
             label="Описание"
             variant="outlined"
+            value={inpValues.description}
+            onChange={e => handleChange(e)}
           />
 
           <TextField
@@ -115,6 +113,8 @@ const EditProduct = () => {
             type="number"
             label="Цена"
             variant="outlined"
+            value={inpValues.price}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -124,6 +124,8 @@ const EditProduct = () => {
             }}
             label="Фото 1"
             variant="outlined"
+            value={inpValues.img1}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -133,6 +135,8 @@ const EditProduct = () => {
             }}
             label="Фото 2"
             variant="outlined"
+            value={inpValues.img2}
+            onChange={e => handleChange(e)}
           />
           <TextField
             sx={{
@@ -142,6 +146,8 @@ const EditProduct = () => {
             }}
             label="Фото 3"
             variant="outlined"
+            value={inpValues.img3}
+            onChange={e => handleChange(e)}
           />
           <Button
             sx={{ my: "30px", mx: "auto", width: "40%" }}
@@ -149,7 +155,7 @@ const EditProduct = () => {
             type="submit">
             Сохранить
           </Button>
-        </Grid>
+        </form>
       </Paper>
     </>
   );
