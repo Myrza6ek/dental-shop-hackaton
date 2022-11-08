@@ -12,8 +12,11 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React from "react";
+// import { Link } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
+  const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -111,19 +114,32 @@ function NavBar() {
             sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <img
-            src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
-            alt="logo"
-            style={{ width: "2vw" }}
-          />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}>
+              <img
+                src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
+                alt="logo"
+                style={{ width: "2vw" }}
+              />
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  display: { xs: "none", sm: "block" },
+                  color: "#55c2ce",
+                  backgroundColor: "white",
+                }}>
+                ental Shop
+              </Typography>
+            </IconButton>
+          </Link>
 
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" }, color: "#55c2ce" }}>
-            ental Shop
-          </Typography>
           <LiveSearch />
 
           <Box
@@ -132,10 +148,45 @@ function NavBar() {
               width: "50%",
               justifyContent: "space-around",
             }}>
-            <span>Главная</span>
-            <span>Все товары</span>
-            <span>О нас</span>
-            <span>Для админа</span>
+            <Link
+              to="/"
+              style={{
+                fontWeight: "bold",
+                color: "#083430",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Главная
+            </Link>
+            <Link
+              to="list"
+              style={{
+                fontWeight: "bold",
+                color: "#083430",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Каталог
+            </Link>
+            <Link
+              style={{
+                fontWeight: "bold",
+                color: "#083430",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              О нас
+            </Link>
+            <Link
+              to="/add"
+              style={{
+                fontWeight: "bold",
+                color: "#083430",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}>
+              Для админа
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
