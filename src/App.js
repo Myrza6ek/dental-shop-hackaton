@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar/NavBar";
@@ -13,8 +13,12 @@ import "./index.css";
 import ProductContextProvider from "./context/ProductContextProvider";
 import MainRoutes from "./MainRoutes";
 
+
 import Cart from "./Components/Cart/Cart";
+
 import CartContextProvider from "./context/CartContextProvider";
+
+
 const App = () => {
   return (
     <CartContextProvider>

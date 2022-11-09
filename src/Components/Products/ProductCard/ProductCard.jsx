@@ -20,9 +20,15 @@ const ProductCard = ({ obj }) => {
   const { addProductToCart } = useContext(cartContext);
   const { id } = useParams();
 
+
   useEffect(() => {
     readOneProduct(obj.id);
   }, []);
+
+  // console.log(productDetails);
+  function SetCart() {
+    localStorage.setItem("cart", JSON.stringify(obj));
+  }
 
   const navigate = useNavigate();
   return (
@@ -45,11 +51,13 @@ const ProductCard = ({ obj }) => {
           <Typography
             gutterBottom
             variant="h7"
+
             //color="text.secondary"
             component="div">
             {obj.category}
           </Typography>
           <Typography variant="h7" color="text.secondary" component="div">
+
             {obj.subCategory}
           </Typography>
           <Typography gutterBottom variant="h6" component="div">
@@ -73,10 +81,11 @@ const ProductCard = ({ obj }) => {
           <CardActions>
             <Button
               variant="contained"
-              // color="warning"
               sx={{ background: "linear-gradient(60deg, #077275 0, #69c5b1)" }}
+
               // sx={{ marginLeft: "20px" }}
               onClick={() => addProductToCart(productDetails)}>
+
               <AddShoppingCartIcon />
             </Button>
 
@@ -88,13 +97,15 @@ const ProductCard = ({ obj }) => {
             <Button
               variant="outlined"
               color="warning"
-              onClick={() => navigate(`/edit/${obj.id}`)}>
+              onClick={() => navigate(`/edit/${obj.id}`)}
+            >
               Edit
             </Button>
             <Button
               variant="outlined"
               color="error"
-              onClick={() => deleteProduct(obj.id)}>
+              onClick={() => deleteProduct(obj.id)}
+            >
               delete
             </Button>
           </CardActions>
