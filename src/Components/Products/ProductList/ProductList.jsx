@@ -2,6 +2,7 @@ import { Box, Grid, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
+import { cartContext } from "../../../context/CartContextProvider";
 import { productContext } from "../../../context/ProductContextProvider";
 import Filter from "../../Filter/Filter";
 import ProductCard from "../ProductCard/ProductCard";
@@ -9,7 +10,7 @@ import ProductCard from "../ProductCard/ProductCard";
 const ProductList = () => {
   const { productsArr, readProduct, pageTotalCount } =
     useContext(productContext);
-
+  const { addProductToCart } = useContext(cartContext);
   const [paramsSearch, setParamsSearch] = useSearchParams();
   const [page, setPage] = useState(1);
 

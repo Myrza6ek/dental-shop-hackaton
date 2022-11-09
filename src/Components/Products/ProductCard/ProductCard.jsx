@@ -10,11 +10,15 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useContext } from "react";
 import { productContext } from "../../../context/ProductContextProvider";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { cartContext } from "../../../context/CartContextProvider";
 
 const ProductCard = ({ obj }) => {
   const { readOneProduct, productDetails, deleteProduct } =
     useContext(productContext);
-  console.log(obj);
+  // console.log(obj);
+
+  const { addProductToCart } = useContext(cartContext);
+  const { id } = useParams();
 
   useEffect(() => {
     readOneProduct(obj.id);
@@ -72,8 +76,7 @@ const ProductCard = ({ obj }) => {
               // color="warning"
               sx={{ background: "linear-gradient(60deg, #077275 0, #69c5b1)" }}
               // sx={{ marginLeft: "20px" }}
-              // onClick={() => addProductToBasket(productDetails)}
-            >
+              onClick={() => addProductToCart(productDetails)}>
               <AddShoppingCartIcon />
             </Button>
 
