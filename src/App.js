@@ -16,20 +16,25 @@ import MainRoutes from "./MainRoutes";
 
 import Cart from "./Components/Cart/Cart";
 
+import CartContextProvider from "./context/CartContextProvider";
+
+
 const App = () => {
   return (
-    <ProductContextProvider>
-      <Box mt="110px">
-        <NavBar />
-        {/* <Cart /> */}
-        <MainRoutes />
-        {/* <EditProduct /> */}
-        {/* <AddProduct /> */}
-        {/* <br /> */}
+    <CartContextProvider>
+      <ProductContextProvider>
+        <Box mt="110px">
+          <NavBar />
+          {/* <Cart /> */}
+          <MainRoutes />
+          {/* <EditProduct /> */}
+          {/* <AddProduct /> */}
+          {/* <br /> */}
 
-        <Footer />
-      </Box>
-    </ProductContextProvider>
+          <Footer />
+        </Box>
+      </ProductContextProvider>
+    </CartContextProvider>
   );
 };
 

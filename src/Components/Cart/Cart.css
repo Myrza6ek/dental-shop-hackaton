@@ -4,11 +4,12 @@
   align-items: center;
 }
 .overlay {
-  /* position: absolute; */
-  left: 0;
-  top: 0;
+  position: absolute;
+  /* left: 0; */
+  top: 60px;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.01);
-  width: 100%;
+  width: 40%;
   height: 100%;
   /* z-index: 1; */
 }
@@ -23,7 +24,18 @@
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
   padding: 30px;
 }
-.items {
+.drawer-korzina {
+  display: flex;
+  justify-content: space-between;
+  /* position: absolute; */
+  /* width: 420px; */
+  /* height: 100%; */
+  /* right: 0; */
+  /* background: #ffffff; */
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+  padding: 30px;
+}
+.first_items {
   flex: 1;
   overflow: auto;
   margin-bottom: 40px;
@@ -38,7 +50,10 @@ h2 img {
   cursor: pointer;
 }
 .cartItem {
-  border: 1px solid #f3f3f3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #3f3f3f98;
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 20px;
@@ -56,6 +71,9 @@ h2 img {
   margin-right: 20px;
 }
 .cartItem-p {
+  display: flex;
+  flex-direction: column;
+
   margin-right: 20px;
 }
 .cartItem-kroc {
@@ -124,7 +142,7 @@ b {
 /* ! ==== button Оформить заказ ===  */
 .greenButton img {
   position: absolute;
-  right: 50px;
+  right: 100px;
   transition: transform 0.2s ease-in-out;
 }
 .greenButton img :hover {
@@ -132,11 +150,11 @@ b {
 }
 .greenButton {
   width: 100%;
-  height: 55px;
-  background: #9dd558;
+  height: 45px;
+  background: linear-gradient(60deg, #06595c 0, #69c5b1);
   border-radius: 18px;
   border: 0;
-  color: #fff;
+  color: rgb(251, 252, 252);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;

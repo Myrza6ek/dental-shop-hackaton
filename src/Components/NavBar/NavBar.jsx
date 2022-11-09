@@ -16,15 +16,23 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { teal } from "@mui/material/colors";
+import { useContext } from "react";
+import { cartContext } from "../../context/CartContextProvider";
 
 
 function NavBar() {
-  const location = useLocation();
+  const { cartCount } = useContext(cartContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+
+  const location = useLocation();
+
+
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -197,17 +205,23 @@ function NavBar() {
             >
               Главная
             </Link>
-            <Link
-              to="list"
-              style={{
-                fontWeight: "bold",
-                color: "#083430",
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-            >
-              Каталог
-            </Link>
+
+
+            {location.pathname === "/list" ? (
+              <span style={{ cursor: "pointer" }}>Каталог</span>
+            ) : (
+              <Link
+                to="/list"
+                style={{
+                  fontWeight: "bold",
+                  color: "#083430",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}>
+                Каталог
+              </Link>
+            )}
+
             <Link
               style={{
                 fontWeight: "bold",
@@ -239,7 +253,7 @@ function NavBar() {
                 size="large"
                 aria-label="show 4 new mails"
                 sx={{ bgcolor: teal[300], color: "white" }}>
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={cartCount} color="primary">
                   <AddShoppingCartIcon />
                 </Badge>
               </IconButton>

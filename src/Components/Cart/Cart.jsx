@@ -1,118 +1,93 @@
-import React from "react";
+import { Box, Button, Card, CardMedia, Paper, Typography } from "@mui/material";
+import React, { useContext, useEffect } from "react";
+import HomePage from "../HomePage/HomePage";
+import ProductList from "../Products/ProductList/ProductList";
 import "./Cart.css";
+import CancelIcon from "@mui/icons-material/Cancel";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { cartContext } from "../../context/CartContextProvider";
 
-const Cart = props => {
+const Cart = () => {
+  const { productsInCart, getCart, changeProductCount, deleteCartProduct } =
+    useContext(cartContext);
+
+  useEffect(() => {
+    getCart();
+  }, []);
+
   return (
-    <div className="overlay">
-      <div className="drawer">
-        <h2 className="drawer-korzina">
-          Корзина
-          <button onClick={() => props.setModalCart(false)}>X</button>
-          <img
-            className="removeBtn"
-            width={20}
-            height={20}
-            src="https://cdn-icons-png.flaticon.com/128/7236/7236457.png"
-            alt="Remove"
-          />
-        </h2>
+    <>
+      <ProductList />
+      <Paper elevation={5} className="overlay">
+        <Box className="drawer">
+          <Typography variant="h5" className="drawer-korzina">
+            Корзина
+            <Button //onClick={() => props.setModalCart(false)}
+            >
+              <CancelIcon />
+            </Button>
+          </Typography>
 
-        <div className="items">
-          <div className="cartItem">
-            <div
-              style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"></div>
+          {productsInCart ? (
+            <>
+              <Card className="first_items">
+                {productsInCart.dentalProducts.map(elem => (
+                  <Paper key={elem.item.id} elevation={6} className="cartItem">
+                    <CardMedia className="cartItemImg">
+                      <img src="" alt="obj.img" />
+                    </CardMedia>
 
-            <div className="cartItem-p">
-              <p className="cartItem-kroc">
-                Мужские кроссовки 1<br />
-                Nike Blazer Mid Suede
-              </p>
-              <b>Цена 12 999 руб.</b>
-              <div>
-                <img
-                  className="removeBtn"
-                  width={20}
-                  height={20}
-                  src="https://cdn-icons-png.flaticon.com/128/7236/7236457.png"
-                  alt="Remove"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* 2 Корзинка start*/}
-          <div className="cartItem">
-            <div
-              style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"></div>
-            <div className="cartItem-p">
-              <p className="cartItem-kroc">
-                Мужские кроссовки 1<br />
-                Nike Blazer Mid Suede
-              </p>
-              <b>Цена 12 999 руб.</b>
-              <div>
-                <img
-                  className="removeBtn"
-                  width={20}
-                  height={20}
-                  src="https://cdn-icons-png.flaticon.com/128/7236/7236457.png"
-                  alt="Remove"
-                />
-              </div>
-            </div>
-          </div>
-          {/* 2 Корзинка end */}
-          {/* 3 Корзинка start*/}
-          <div className="cartItem">
-            <div
-              style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"></div>
-            <div className="cartItem-p">
-              <p className="cartItem-kroc">
-                Мужские кроссовки 1<br />
-                Nike Blazer Mid Suede
-              </p>
-              <b>Цена 12 999 руб.</b>
-              <div>
-                <img
-                  className="removeBtn"
-                  width={20}
-                  height={20}
-                  src="https://cdn-icons-png.flaticon.com/128/7236/7236457.png"
-                  alt="Remove"
-                />
-              </div>
-            </div>
-          </div>
-          {/* 3 Корзинка end */}
-          <div className="cartTotalBlock">
-            <ul className="TotalBlock">
-              <li className="itogo">
-                <span>Итого</span>
-                <div className="cherta1"></div>
-                <b>21 498 руб.</b>
-              </li>
-              <li className="nalog">
-                <span>Налог 5%:</span>
-                <div className="cherta2"></div>
-                <b>1074 руб.</b>
-              </li>
-            </ul>
-            <button className="greenButton ">
-              Оформить заказ
-              <img
-                width={20}
-                height={20}
-                src="https://cdn-icons-png.flaticon.com/512/2989/2989981.png"
-                alt="Arrow"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <Box className="cartItem-p">
+                      <Typography className="cartItem-kroc">
+                        {elem.item.category}
+                        <br />
+                        {elem.item.title}
+                      </Typography>
+                      <b>{elem.item.price}</b>
+                    </Box>
+                    <Button
+                      onClick={() => {
+                        deleteCartProduct(elem.item.id);
+                      }}
+                      className="removeBtn"
+                      width={20}
+                      height={20}>
+                      <DeleteOutlineIcon />
+                    </Button>
+                    <Typography>Итого: {elem.subPrice}</Typography>
+                  </Paper>
+                ))}
+                <div className="cartTotalBlock">
+                  <ul className="TotalBlock">
+                    <li className="itogo">
+                      <span>Итого</span>
+                      <div className="cherta1"></div>
+                      <b></b>
+                    </li>
+                    {/* <li className="nalog">
+                        <span>Налог 5%:</span>
+                        <div className="cherta2"></div>
+                        <b>1074 руб.</b>
+                      </li> */}
+                  </ul>
+                  <button className="greenButton">
+                    Оформить заказ
+                    <img
+                      width={20}
+                      height={20}
+                      src="https://cdn-icons-png.flaticon.com/512/2989/2989981.png"
+                      alt="Arrow"
+                    />
+                  </button>
+                </div>
+              </Card>
+            </>
+          ) : (
+            <h1>Loading...</h1>
+          )}
+        </Box>
+      </Paper>
+    </>
   );
 };
 
