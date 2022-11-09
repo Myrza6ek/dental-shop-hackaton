@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar/NavBar";
@@ -12,7 +12,6 @@ import Footer from "./Components/Footer/Footer";
 import "./index.css";
 import ProductContextProvider from "./context/ProductContextProvider";
 import MainRoutes from "./MainRoutes";
-
 
 const App = () => {
   return (
