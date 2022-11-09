@@ -23,6 +23,10 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { AddShoppingCart } from "@mui/icons-material";
 import PaidIcon from "@mui/icons-material/Paid";
 
+import { orange } from "@mui/material/colors";
+import { deepOrange } from "@mui/material/colors";
+// import Filter from "../../Filter/Filter";
+
 SwiperCore.use([Thumbs]);
 
 const ProductDetails = () => {
@@ -38,6 +42,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   return (
     <>
+      {/* <Filter /> */}
       {productDetails ? (
         <Container mx="auto" sx={{ marginTop: "40px" }}>
           <Grid container spacing={1}>
@@ -81,81 +86,83 @@ const ProductDetails = () => {
               </Swiper>
             </Grid>
             <Grid item xs={7}>
-              <Paper elevation={3} sx={{ padding: "10px" }}>
+              <Paper elevation={5} sx={{ padding: "10px" }}>
                 <Typography variant="h4">{productDetails.category}</Typography>
                 <Typography variant="h5">
                   {productDetails.subCategory}
                 </Typography>
                 <Typography variant="h3">{productDetails.title}</Typography>
-                <hr />
+              </Paper>
+
+              <Paper elevation={5} sx={{ mt: "20px", padding: "10px" }}>
                 <Typography sx={{ marginTop: "30px" }}>
                   Описание:{<br />}
                   {productDetails.description}
                 </Typography>
-                <Alert
-                  icon={<PaidIcon />}
-                  sx={{
-                    fontSize: "25px",
-                    fontWeight: 600,
-                    mt: "20px",
-                    display: "flex",
-                    // justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}>
-                  Цена: {productDetails.price} сом
-                </Alert>
+              </Paper>
+              <Alert
+                icon={<PaidIcon />}
+                sx={{
+                  fontSize: "25px",
+                  fontWeight: 600,
+                  mt: "20px",
+                  display: "flex",
+                  // justifyContent: "space-evenly",
+                  alignItems: "center",
+                }}>
+                Цена: {productDetails.price} сом
+              </Alert>
 
-                <Box
+              <Box
+                sx={{
+                  mt: "15px",
+                  display: "flex",
+                  // width: "48%",
+                  justifyContent: "space-between",
+                }}>
+                <Button variant="contained" sx={{ width: "48%" }}>
+                  Купить
+                </Button>
+                <Button
+                  variant="contained"
+                  // color="warning"
                   sx={{
-                    mt: "15px",
-                    display: "flex",
-                    // width: "48%",
-                    justifyContent: "space-between",
-                  }}>
-                  <Button variant="contained" sx={{ width: "48%" }}>
-                    Купить
-                  </Button>
-                  <Button
-                    variant="contained"
-                    // color="warning"
-                    sx={{
-                      width: "48%",
-                      background: "linear-gradient(60deg, #077275 0, #69c5b1)",
-                    }}
-                    // sx={{ marginLeft: "20px" }}
-                    // onClick={() => addProductToBasket(productDetails)}
-                  >
-                    <AddShoppingCart />
-                  </Button>
-                </Box>
+                    width: "48%",
+                    background: "linear-gradient(60deg, #077275 0, #69c5b1)",
+                  }}
+                  // sx={{ marginLeft: "20px" }}
+                  // onClick={() => addProductToBasket(productDetails)}
+                >
+                  <AddShoppingCart />
+                </Button>
+              </Box>
 
-                <Box
-                  sx={{
-                    mt: "15px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}>
-                  <Button
-                    variant="outlined"
-                    color="warning"
-                    sx={{ width: "48%" }}
-                    onClick={() => navigate(`/edit/${productDetails.id}`)}>
-                    Edit
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    color="error"
-                    sx={{ width: "48%" }}
-                    onClick={() => deleteProduct(productDetails.id)}>
-                    Delete
-                  </Button>
-                  {/* <Link
+              <Box
+                sx={{
+                  mt: "15px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}>
+                <Button
+                  variant="contained"
+                  color="warning"
+                  sx={{ width: "48%", bgcolor: orange[400] }}
+                  onClick={() => navigate(`/edit/${productDetails.id}`)}>
+                  Edit
+                </Button>
+                <Button
+                  variant="contained"
+                  color="error"
+                  sx={{ width: "48%", bgcolor: deepOrange[400] }}
+                  onClick={() => deleteProduct(productDetails.id)}>
+                  Delete
+                </Button>
+                {/* <Link
                     to={`/edit/${productDetails.id}`}
                     style={{ width: "50%" }}
                   > */}
-                  {/* </Link> */}
-                </Box>
-              </Paper>
+                {/* </Link> */}
+              </Box>
             </Grid>
           </Grid>
         </Container>
