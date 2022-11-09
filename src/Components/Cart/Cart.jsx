@@ -1,4 +1,7 @@
-function Drawer(props) {
+import React from "react";
+import "./Cart.css";
+
+const Cart = props => {
   return (
     <div className="overlay">
       <div className="drawer">
@@ -18,8 +21,7 @@ function Drawer(props) {
           <div className="cartItem">
             <div
               style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"
-            ></div>
+              className="cartItemImg"></div>
 
             <div className="cartItem-p">
               <p className="cartItem-kroc">
@@ -43,8 +45,7 @@ function Drawer(props) {
           <div className="cartItem">
             <div
               style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"
-            ></div>
+              className="cartItemImg"></div>
             <div className="cartItem-p">
               <p className="cartItem-kroc">
                 Мужские кроссовки 1<br />
@@ -67,8 +68,7 @@ function Drawer(props) {
           <div className="cartItem">
             <div
               style={{ backgroundImage: "url(/img/krosovki1.jpg)" }}
-              className="cartItemImg"
-            ></div>
+              className="cartItemImg"></div>
             <div className="cartItem-p">
               <p className="cartItem-kroc">
                 Мужские кроссовки 1<br />
@@ -114,6 +114,6 @@ function Drawer(props) {
       </div>
     </div>
   );
-}
+};
 
-export default Drawer;
+export default Cart;

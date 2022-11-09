@@ -13,11 +13,15 @@ import "./index.css";
 import ProductContextProvider from "./context/ProductContextProvider";
 import MainRoutes from "./MainRoutes";
 
+
+import Cart from "./Components/Cart/Cart";
+
 const App = () => {
   return (
     <ProductContextProvider>
       <Box mt="110px">
         <NavBar />
+        {/* <Cart /> */}
         <MainRoutes />
         {/* <EditProduct /> */}
         {/* <AddProduct /> */}

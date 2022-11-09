@@ -14,10 +14,10 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import React, { useContext } from "react";
 // import { Link } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import { Button, Modal, Paper } from "@mui/material";
-import { productContext } from "../../context/ProductContextProvider";
-import { useEffect } from "react";
-import useProduct from "../../context/ProductContextProvider";
+
+import { teal } from "@mui/material/colors";
+
+
 function NavBar() {
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -233,15 +233,18 @@ function NavBar() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error" onClick={handleOpen}>
-                <AddShoppingCartIcon />
-              </Badge>
-            </IconButton>
+
+            <Link to="/cart">
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                sx={{ bgcolor: teal[300], color: "white" }}>
+                <Badge badgeContent={4} color="primary">
+                  <AddShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
+
             <IconButton
               size="large"
               edge="end"

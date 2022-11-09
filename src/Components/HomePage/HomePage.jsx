@@ -20,7 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function HomePage() {
   return (
-    <Box className="body" mx="auto">
+    <Box className="body" mx="auto" mb="40px">
       <Grid
         className="bg1"
         mx="auto"

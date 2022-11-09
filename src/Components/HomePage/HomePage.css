@@ -5,10 +5,10 @@
 } */
 
 .bg {
-  background: linear-gradient(60deg, #077275 0, #69c5b1);
+  background: linear-gradient(60deg, #077275 0, #69c5b19c);
 }
 .bg1 {
-  background: linear-gradient(20deg, #077275 0, #69c5b1);
+  background: linear-gradient(20deg, #077275 0, #69c5b19d);
 }
 /* .function1 div {
   display: flex;
