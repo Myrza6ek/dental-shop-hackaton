@@ -13,7 +13,9 @@ const EditProduct = () => {
   const { id } = useParams();
   useEffect(() => {
     readOneProduct(id);
-  }, [id]);
+  }, []);
+
+  console.log(productDetails);
 
   useEffect(() => {
     setInpValues(productDetails);
@@ -62,9 +64,10 @@ const EditProduct = () => {
           width: "70%",
           bgcolor: "#818987ca",
         }}
-        elevation={9}>
+        elevation={9}
+      >
         <Typography id="add-title">Редактирование</Typography>
-        <form id="form-add" onSubmit={e => handleSave(e)}>
+        <form id="form-add" onSubmit={(e) => handleSave(e)}>
           <TextField
             sx={{
               backgroundColor: "white",
@@ -74,8 +77,8 @@ const EditProduct = () => {
             label="Категория"
             name="category"
             variant="outlined"
-            value={inpValues.category}
-            onChange={e => handleChange(e)}
+            value={productDetails?.category}
+            onChange={(e) => handleChange(e)}
           />
           <TextField
             sx={{
@@ -85,9 +88,11 @@ const EditProduct = () => {
             }}
             label="Название"
             variant="outlined"
+
             name="title"
             value={inpValues.title}
             onChange={e => handleChange(e)}
+
           />
           <TextField
             sx={{
@@ -97,9 +102,11 @@ const EditProduct = () => {
             }}
             label="Подкатегория"
             variant="outlined"
+
             name="subCategory"
             value={inpValues.subCategory}
             onChange={e => handleChange(e)}
+
           />
           <TextField
             sx={{
@@ -109,9 +116,11 @@ const EditProduct = () => {
             }}
             label="Описание"
             variant="outlined"
+
             name="description"
             value={inpValues.description}
             onChange={e => handleChange(e)}
+
           />
 
           <TextField
@@ -124,8 +133,10 @@ const EditProduct = () => {
             label="Цена"
             name="price"
             variant="outlined"
+
             value={inpValues?.price}
             onChange={e => handleChange(e)}
+
           />
           <TextField
             sx={{
@@ -135,9 +146,11 @@ const EditProduct = () => {
             }}
             label="Фото 1"
             variant="outlined"
+
             name="img1"
             value={inpValues.img1}
             onChange={e => handleChange(e)}
+
           />
           <TextField
             sx={{
@@ -147,9 +160,11 @@ const EditProduct = () => {
             }}
             label="Фото 2"
             variant="outlined"
+
             name="img2"
             value={inpValues.img2}
             onChange={e => handleChange(e)}
+
           />
           <TextField
             sx={{
@@ -160,13 +175,14 @@ const EditProduct = () => {
             label="Фото 3"
             name="img3"
             variant="outlined"
-            value={inpValues.img3}
-            onChange={e => handleChange(e)}
+            value={productDetails?.img3}
+            onChange={(e) => handleChange(e)}
           />
           <Button
             sx={{ my: "30px", mx: "auto", width: "40%" }}
             variant="contained"
-            type="submit">
+            type="submit"
+          >
             Сохранить
           </Button>
         </form>
