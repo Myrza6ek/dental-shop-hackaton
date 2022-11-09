@@ -9,14 +9,18 @@ const API = "http://localhost:8000/dentalProducts";
 const INIT_STATE = {
   product: null,
   productDetails: null,
+  pageTotalCount: 1,
 };
 
 function reducer(prevState, action) {
+  // console.log(action.payload);
   switch (action.type) {
     case "GET_PRODUCT":
       return {
         ...prevState,
         product: action.payload.data,
+
+        pageTotalCount: Math.ceil(action.payload.headers["x-total-count"] / 3),
       };
     case "GET_ONE_PRODUCT":
       return {
@@ -39,6 +43,7 @@ const ProductContextProvider = props => {
     try {
       await axios.post(API, newProduct);
       readProduct();
+      navigate("/list");
     } catch (error) {
       return error;
     }
@@ -86,6 +91,7 @@ const ProductContextProvider = props => {
     editProduct,
     productsArr: state.product,
     productDetails: state.productDetails,
+    pageTotalCount: state.pageTotalCount,
   };
   return (
     <productContext.Provider value={cloud}>

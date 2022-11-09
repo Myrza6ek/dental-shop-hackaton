@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -25,19 +23,29 @@ const ProductCard = ({ obj }) => {
   const navigate = useNavigate();
   return (
     <>
-      <Card sx={{ maxWidth: 355, mx: "auto" }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="380"
-          image={obj.img1}
-        />
+      <Card sx={{ maxWidth: 300, mx: "auto" }}>
+        <Card
+          sx={{
+            mt: "20px",
+            mx: "auto",
+            width: "200px",
+          }}>
+          <CardMedia
+            component="img"
+            alt="green iguana"
+            height="220"
+            image={obj.img1}
+          />
+        </Card>
         <CardContent>
           <Typography
             gutterBottom
             variant="h7"
-            color="text.secondary"
+            //color="text.secondary"
             component="div">
+            {obj.category}
+          </Typography>
+          <Typography variant="h7" color="text.secondary" component="div">
             {obj.subCategory}
           </Typography>
           <Typography gutterBottom variant="h6" component="div">
@@ -48,8 +56,12 @@ const ProductCard = ({ obj }) => {
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
           </Typography> */}
-          <Typography gutterBottom variant="h4" component="div">
-            {obj.price}
+          <Typography
+            gutterBottom
+            variant="h5"
+            fontWeight="bold"
+            component="div">
+            {obj.price} сом
           </Typography>
         </CardContent>
 
@@ -65,7 +77,7 @@ const ProductCard = ({ obj }) => {
               <AddShoppingCartIcon />
             </Button>
 
-            <Link to={`/details/${obj.id}`}>
+            <Link style={{ textDecoration: "none" }} to={`/details/${obj.id}`}>
               <Button size="small">Подробнее</Button>
             </Link>
           </CardActions>

@@ -7,12 +7,17 @@ import "./EditProduct.css";
 const EditProduct = () => {
   const { productDetails, readOneProduct, editProduct } =
     useContext(productContext);
+  console.log(productDetails);
   const [inpValues, setInpValues] = useState(productDetails);
 
   const { id } = useParams();
   useEffect(() => {
     readOneProduct(id);
   }, [id]);
+
+  useEffect(() => {
+    setInpValues(productDetails);
+  }, [productDetails]);
 
   function handleChange(e) {
     let obj = {
@@ -29,9 +34,8 @@ const EditProduct = () => {
     if (
       !inpValues.category.trim() ||
       !inpValues.title.trim() ||
-      !inpValues.model.trim() ||
+      !inpValues.subCategory.trim() ||
       !inpValues.description.trim() ||
-      !inpValues.color.trim() ||
       !inpValues.price ||
       !inpValues.img1.trim() ||
       !inpValues.img2.trim() ||
@@ -41,7 +45,8 @@ const EditProduct = () => {
       return;
     }
     editProduct(id, inpValues);
-    navigate("/list");
+    navigate(`/details/${id}`);
+    readOneProduct();
   }
 
   return (
@@ -53,6 +58,7 @@ const EditProduct = () => {
           justifyContent: "center",
           padding: "20px",
           mx: "auto",
+          mb: "40px",
           width: "70%",
           bgcolor: "#818987ca",
         }}
@@ -66,6 +72,7 @@ const EditProduct = () => {
               margin: "10px 0",
             }}
             label="Категория"
+            name="category"
             variant="outlined"
             value={inpValues.category}
             onChange={e => handleChange(e)}
@@ -78,6 +85,7 @@ const EditProduct = () => {
             }}
             label="Название"
             variant="outlined"
+            name="title"
             value={inpValues.title}
             onChange={e => handleChange(e)}
           />
@@ -89,6 +97,7 @@ const EditProduct = () => {
             }}
             label="Подкатегория"
             variant="outlined"
+            name="subCategory"
             value={inpValues.subCategory}
             onChange={e => handleChange(e)}
           />
@@ -100,6 +109,7 @@ const EditProduct = () => {
             }}
             label="Описание"
             variant="outlined"
+            name="description"
             value={inpValues.description}
             onChange={e => handleChange(e)}
           />
@@ -112,8 +122,9 @@ const EditProduct = () => {
             }}
             type="number"
             label="Цена"
+            name="price"
             variant="outlined"
-            value={inpValues.price}
+            value={inpValues?.price}
             onChange={e => handleChange(e)}
           />
           <TextField
@@ -124,6 +135,7 @@ const EditProduct = () => {
             }}
             label="Фото 1"
             variant="outlined"
+            name="img1"
             value={inpValues.img1}
             onChange={e => handleChange(e)}
           />
@@ -135,6 +147,7 @@ const EditProduct = () => {
             }}
             label="Фото 2"
             variant="outlined"
+            name="img2"
             value={inpValues.img2}
             onChange={e => handleChange(e)}
           />
@@ -145,6 +158,7 @@ const EditProduct = () => {
               margin: "10px 0",
             }}
             label="Фото 3"
+            name="img3"
             variant="outlined"
             value={inpValues.img3}
             onChange={e => handleChange(e)}
