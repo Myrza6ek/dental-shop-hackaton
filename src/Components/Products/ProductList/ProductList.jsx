@@ -1,6 +1,5 @@
 import { Box, Grid, Pagination } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { productContext } from "../../../context/ProductContextProvider";
 import Filter from "../../Filter/Filter";
@@ -35,14 +34,16 @@ const ProductList = () => {
           display: "flex",
 
           justifyContent: "center",
-        }}>
+        }}
+      >
         <Grid
           sx={{
             // width: "19%",
             bgcolor: "white",
             borderRadius: "5px",
           }}
-          my="25px">
+          my="25px"
+        >
           <Filter />
           {/* <Filter
           category={category}
@@ -62,7 +63,8 @@ const ProductList = () => {
             // alignItems="flex-start"
             sx={{ width: "100%" }}
             mx="auto"
-            my="25px">
+            my="25px"
+          >
             {/* <Grid xs={3.5} item={true} mb={7}>
               <ProductCard />
             </Grid>
@@ -73,7 +75,7 @@ const ProductList = () => {
               <ProductCard />
             </Grid> */}
             {productsArr
-              ? productsArr.map(item => (
+              ? productsArr.map((item) => (
                   <Grid item={true} xs={3} mb={4} key={item.id}>
                     <ProductCard obj={item} />
                   </Grid>
@@ -83,7 +85,8 @@ const ProductList = () => {
           <Grid
             sx={{ width: "40%", display: "flex", justifyContent: "center" }}
             mx="auto"
-            my="20px">
+            my="20px"
+          >
             <Pagination
               count={+pageTotalCount}
               page={+page}

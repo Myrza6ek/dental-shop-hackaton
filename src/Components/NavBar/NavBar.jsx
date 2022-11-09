@@ -17,7 +17,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import { teal } from "@mui/material/colors";
 
-
 function NavBar() {
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,12 +38,12 @@ function NavBar() {
     boxShadow: 24,
     p: 4,
   };
-  const { readProduct } = useContext(productContext);
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  // const { readProduct } = useContext(productContext);
+  // const cart = JSON.parse(localStorage.getItem("cart"));
 
-  useEffect(() => {
-    readProduct();
-  }, []);
+  // useEffect(() => {
+  //   readProduct();
+  // }, []);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -233,12 +232,12 @@ function NavBar() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-
             <Link to="/cart">
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
-                sx={{ bgcolor: teal[300], color: "white" }}>
+                sx={{ bgcolor: teal[300], color: "white" }}
+              >
                 <Badge badgeContent={4} color="primary">
                   <AddShoppingCartIcon />
                 </Badge>
@@ -270,35 +269,35 @@ function NavBar() {
           </Box>
         </Toolbar>
         <div>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Text in a modal
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="headerLeft">
-                  <img width={200} height={200} src={cart?.img1} />
-                  <div className="headerInfo">
-                    <h3>{cart?.category}</h3>
-                    <p className="opacity-5">{cart?.title}</p>
+          {/* <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Text in a modal
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <div className="headerLeft">
+                    <img width={200} height={200} src={cart?.img1} />
+                    <div className="headerInfo">
+                      <h3>{cart?.category}</h3>
+                      <p className="opacity-5">{cart?.title}</p>
+                    </div>
                   </div>
-                </div>
-                <Button
-                  onClick={() => {
-                    localStorage.clear();
-                    handleClose();
-                  }}
-                >
-                  clear cart
-                </Button>
-              </Typography>
-            </Box>
-          </Modal>
+                  <Button
+                    onClick={() => {
+                      localStorage.clear();
+                      handleClose();
+                    }}
+                  >
+                    clear cart
+                  </Button>
+                </Typography>
+              </Box>
+            </Modal> */}
         </div>
       </AppBar>
       {renderMobileMenu}
