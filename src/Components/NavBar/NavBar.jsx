@@ -11,23 +11,21 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 // import { Link } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 import { teal } from "@mui/material/colors";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { cartContext } from "../../context/CartContextProvider";
-
+import { productContext } from "../../context/ProductContextProvider";
 
 function NavBar() {
   const { cartCount } = useContext(cartContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-
   const location = useLocation();
-
 
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpenModal = () => setOpenModal(true);
@@ -53,15 +51,15 @@ function NavBar() {
   useEffect(() => {
     readProduct();
   }, []);
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const [open, setOpen] = React.useState(false);
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
-  const handleProfileMenuOpen = (event) => {
+  const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -74,7 +72,7 @@ function NavBar() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
+  const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -93,8 +91,7 @@ function NavBar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -115,8 +112,7 @@ function NavBar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -131,8 +127,7 @@ function NavBar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -145,16 +140,14 @@ function NavBar() {
       <AppBar
         position="fixed"
         color="transparent"
-        sx={{ backdropFilter: "blur(20px)" }}
-      >
+        sx={{ backdropFilter: "blur(20px)" }}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
+            sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
           <Link to="/" style={{ textDecoration: "none" }}>
@@ -163,8 +156,7 @@ function NavBar() {
               edge="start"
               color="inherit"
               aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
+              sx={{ mr: 2 }}>
               <img
                 src="https://cdn2.vectorstock.com/i/1000x1000/59/46/logo-combination-of-d-letter-and-tooth-vector-5925946.jpg"
                 alt="logo"
@@ -178,8 +170,7 @@ function NavBar() {
                   display: { xs: "none", sm: "block" },
                   color: "#55c2ce",
                   backgroundColor: "white",
-                }}
-              >
+                }}>
                 ental Shop
               </Typography>
             </IconButton>
@@ -192,8 +183,7 @@ function NavBar() {
               display: "flex",
               width: "50%",
               justifyContent: "space-around",
-            }}
-          >
+            }}>
             <Link
               to="/"
               style={{
@@ -201,11 +191,9 @@ function NavBar() {
                 color: "#083430",
                 textDecoration: "none",
                 cursor: "pointer",
-              }}
-            >
+              }}>
               Главная
             </Link>
-
 
             {location.pathname === "/list" ? (
               <span style={{ cursor: "pointer" }}>Каталог</span>
@@ -228,8 +216,7 @@ function NavBar() {
                 color: "#083430",
                 textDecoration: "none",
                 cursor: "pointer",
-              }}
-            >
+              }}>
               О нас
             </Link>
             <Link
@@ -239,15 +226,13 @@ function NavBar() {
                 color: "#083430",
                 textDecoration: "none",
                 cursor: "pointer",
-              }}
-            >
+              }}>
               Для админа
             </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-
             <Link to="/cart">
               <IconButton
                 size="large"
@@ -265,8 +250,7 @@ function NavBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              color="inherit"
-            >
+              color="inherit">
               <AccountCircle />
             </IconButton>
           </Box>
@@ -277,19 +261,17 @@ function NavBar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>
         </Toolbar>
-        <div>
+        {/* <div>
           <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
+            aria-describedby="modal-modal-description">
             <Box sx={style}>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Text in a modal
@@ -306,14 +288,13 @@ function NavBar() {
                   onClick={() => {
                     localStorage.clear();
                     handleClose();
-                  }}
-                >
+                  }}>
                   clear cart
                 </Button>
               </Typography>
             </Box>
           </Modal>
-        </div>
+        </div> */}
       </AppBar>
       {renderMobileMenu}
       {renderMenu}

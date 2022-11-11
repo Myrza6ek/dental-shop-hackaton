@@ -25,6 +25,8 @@ import PaidIcon from "@mui/icons-material/Paid";
 
 import { orange } from "@mui/material/colors";
 import { deepOrange } from "@mui/material/colors";
+import { cartContext } from "../../../context/CartContextProvider";
+
 // import Filter from "../../Filter/Filter";
 
 SwiperCore.use([Thumbs]);
@@ -34,6 +36,7 @@ const ProductDetails = () => {
   const { readOneProduct, productDetails, deleteProduct } =
     useContext(productContext);
   const { id } = useParams();
+  const { addProductToCart } = useContext(cartContext);
 
   useEffect(() => {
     readOneProduct(id);
@@ -131,8 +134,7 @@ const ProductDetails = () => {
                     background: "linear-gradient(60deg, #077275 0, #69c5b1)",
                   }}
                   // sx={{ marginLeft: "20px" }}
-                  // onClick={() => addProductToBasket(productDetails)}
-                >
+                  onClick={() => addProductToCart(productDetails)}>
                   <AddShoppingCart />
                 </Button>
               </Box>

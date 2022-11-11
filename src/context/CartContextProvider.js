@@ -119,8 +119,8 @@ const CartContextProvider = ({ children }) => {
     getCart,
     changeProductCount,
     deleteCartProduct,
-    cartCount: state.cartCount,
     productsInCart: state.cart,
+    cartCount: state.cartCount,
   };
 
   return <cartContext.Provider value={cloud}>{children}</cartContext.Provider>;

@@ -32,7 +32,7 @@ function reducer(prevState, action) {
   }
 }
 
-const ProductContextProvider = (props) => {
+const ProductContextProvider = props => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const location = useLocation();
 
@@ -50,7 +50,7 @@ const ProductContextProvider = (props) => {
   }
   //read
   async function readProduct() {
-    const res = await axios(`${API}`);
+    const res = await axios(`${API}/${location.search}`);
     dispatch({
       type: "GET_PRODUCT",
       payload: res,

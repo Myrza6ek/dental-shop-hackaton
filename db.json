@@ -1,8 +1,8 @@
 {
   "dentalProducts": [
     {
-      "category": "terapiaaaaaaaaaaaaaaa",
-      "title": "plombiwe",
+      "category": "terapia",
+      "title": "Пломбировочные",
       "subCategory": "terapia",
       "description": "rwqerqewewewe",
       "price": "12000",
@@ -12,8 +12,8 @@
       "id": 3
     },
     {
-      "category": "otopedia",
-      "title": "Nakonechnik",
+      "category": "Орто",
+      "title": "Наконечник повышайка",
       "subCategory": "instrumenty",
       "description": "Частота вращения ротора — 340 000 оборотов в минуту. Мощность — не менее 18 Вт. Длина инструмента: 12-14 см. Двухструйный спрей.",
       "price": "19000",
@@ -24,7 +24,7 @@
     },
     {
       "category": "hir",
-      "title": "shipcy",
+      "title": "shi",
       "subCategory": "hirurgia",
       "description": "rwqerqwr",
       "price": 19995,
@@ -43,17 +43,6 @@
       "img2": "2",
       "img3": "3",
       "id": 7
-    },
-    {
-      "category": "gttt",
-      "title": "ghjkl",
-      "subCategory": "ghjkl",
-      "description": "hjkl",
-      "price": 9876543,
-      "img1": "bhjkl",
-      "img2": "nmk.",
-      "img3": "1 00 0 000 ",
-      "id": 8
     },
     {
       "category": "Terapia",
@@ -79,7 +68,7 @@
     },
     {
       "category": "hirurgia",
-      "title": "Shpric karpulnyi",
+      "title": "Карпульные шприцы",
       "subCategory": "instrumenty ",
       "description": "s;lhw;elkq;elhrqwerhlqkwjergwegroqiwer",
       "price": "1507",
